@@ -1,0 +1,14 @@
+<div class="nav-container">
+	@for (navItem of navItems(); track navItem) {
+		@if (navItem.link) {
+			<a [routerLink]="navItem.link" [class.root-link]="navItem.isRoot">{{ navItem.title }}</a>
+		} @else if (navItem.children?.length) {
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					{{ navItem.title }}
+				</mat-expansion-panel-header>
+				<app-nav-list [navItems]="navItem.children!" />
+			</mat-expansion-panel>
+		}
+	}
+</div>
