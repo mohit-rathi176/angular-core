@@ -1,7 +1,14 @@
 <div class="nav-container">
 	@for (navItem of navItems(); track navItem) {
 		@if (navItem.link) {
-			<a [routerLink]="navItem.link" [class.root-link]="navItem.isRoot">{{ navItem.title }}</a>
+			<a
+				[class.root-link]="navItem.isRoot"
+				[routerLink]="navItem.link"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				{{ navItem.title }}
+			</a>
 		} @else if (navItem.children?.length) {
 			<mat-expansion-panel>
 				<mat-expansion-panel-header>

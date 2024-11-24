@@ -4,6 +4,8 @@
 
 .mat-drawer-content {
 	height: calc(100vh - 64px);
+	width: 100%;
+	overflow-x: hidden;
 }
 
 main {

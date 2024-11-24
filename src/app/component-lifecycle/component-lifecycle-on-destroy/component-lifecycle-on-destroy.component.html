@@ -1,0 +1,13 @@
+<div class="content-container">
+
+	<h1>OnDestroy</h1>
+
+	<p class="paragraph">This is the last hook method. The ngOnDestroy method runs once just before a component is destroyed.</p>
+
+	<p class="paragraph">Angular destroys a component when it is no longer shown on the page, such as being hidden by NgIf or upon navigating to another page.</p>
+
+	<p class="paragraph">In this method, we can perform the cleanup logic like unsubscribing the observable and detaching event handlers to avoid memory leaks.</p>
+
+	<p class="paragraph">As an alternative to the ngOnDestroy method, you can inject an instance of DestroyRef. You can register a callback to be invoked upon the component's destruction by calling the onDestroy method of DestroyRef.</p>
+
+</div>

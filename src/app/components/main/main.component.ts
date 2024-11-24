@@ -18,50 +18,50 @@ export class MainComponent implements OnInit {
 			children: [
 				{
 					title: 'Introduction',
-					link: '/'
+					link: '/component-lifecycle/introduction'
 				},
 				{
 					title: 'OnChanges',
-					link: '/'
+					link: '/component-lifecycle/on-changes'
 				},
 				{
 					title: 'OnInit',
-					link: '/'
+					link: '/component-lifecycle/on-init'
 				},
 				{
 					title: 'DoCheck',
-					link: '/'
+					link: '/component-lifecycle/do-check'
 				},
 				{
 					title: 'AfterContentInit',
-					link: '/'
+					link: '/component-lifecycle/after-content-init'
 				},
 				{
 					title: 'AfterContentChecked',
-					link: '/'
+					link: '/component-lifecycle/after-content-checked'
 				},
 				{
 					title: 'AfterViewInit',
-					link: '/'
+					link: '/component-lifecycle/after-view-init'
 				},
 				{
 					title: 'AfterViewChecked',
-					link: '/'
+					link: '/component-lifecycle/after-view-checked'
 				},
 				{
 					title: 'OnDestroy',
-					link: '/'
+					link: '/component-lifecycle/on-destroy'
 				},
 			]
 		},
 		{
 			title: 'Directives',
-			link: '/',
+			link: '/directives',
 			isRoot: true
 		},
 		{
 			title: 'Pipes',
-			link: '/',
+			link: '/pipes',
 			isRoot: true
 		}
 	];

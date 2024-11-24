@@ -1,0 +1,15 @@
+<div class="content-container">
+
+	<h1>Component Lifecycle</h1>
+
+	<p class="paragraph">A component's lifecycle is the sequence of steps that happen between the component's creation and its destruction. Each step represents a different part of Angular's process for rendering components and checking them for updates over time.</p>
+	
+	<p class="paragraph">In your components, you can implement lifecycle hooks to run code during these steps. Lifecycle hooks that relate to a specific component instance are implemented as methods on your component class. Lifecycle hooks that relate the Angular application as a whole are implemented as functions that accept a callback.</p>
+
+	<p class="paragraph">Below diagram shows the order in which all the lifecycle hook methods are called. The white arrows from 1 to 7 shows the order of execution of lifecycle hook methods when the component is initialized for the first time. The red arrows 8 to 11 shows the order of execution of lifecycle hook methods after that, as some of the methods are only executed once during the component lifecycle. The ngOnDestroy method is called once at the end of component's lifecycle when the component is removed from the DOM.</p>
+
+	<div class="image">
+		<img src="images/angular-lifecycle-hooks.png" alt="Angular Component Lifecycle Hooks" />
+	</div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="content-container">
+
+	<h1>OnChanges</h1>
+
+	<p class="paragraph">This method is called first among all other angular lifecycle hooks.</p>
+
+	<p class="paragraph">This method is called when any data bound properties (decorated with &#64;Input decorator) changes in our component.</p>
+
+	<p class="paragraph">If our component does not contain any input properties then this life cycle hook method is not called.</p>
+
+	<p class="paragraph">This life cycle hook method accepts an object of SimpleChanges class as a parameter. This object is a Record mapping each component input name to a SimpleChange object. This object contains the input's previous value, its current value, and a flag for whether this is the first time the input has changed. If you provide an alias for any input properties, the SimpleChanges Record still uses the TypeScript property name as a key, rather than the alias.</p>
+
+	<p class="paragraph">ngOnChanges triggers when we update the input properties of primitive data types but in case of non-primitive data types it will not trigger properly. To handle this scenario you must update the non-primitive data types (objects) by reassigning them.</p>
+
+</div>
