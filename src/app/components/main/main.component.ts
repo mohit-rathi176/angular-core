@@ -52,6 +52,10 @@ export class MainComponent implements OnInit {
 					title: 'OnDestroy',
 					link: '/component-lifecycle/on-destroy'
 				},
+				{
+					title: 'Rendering',
+					link: '/component-lifecycle/rendering'
+				}
 			]
 		},
 		{

@@ -1,0 +1,27 @@
+<div class="content-container">
+
+	<h1>Rendering</h1>
+
+	<p class="paragraph">There are cases when you need to manually manipulate the DOM only on the browser side, for example to get coordinates or block sizes. This can be difficult to do using component lifecycle events, as they will also be executed during rendering and pre-rendering on the server side. To solve this problem, new afterRender and afterNextRender functions were added to Angular in version 16.2.</p>
+
+	<p class="paragraph">The afterRender and afterNextRender functions let you register a render callback to be invoked after Angular has finished rendering all components on the page into the DOM.</p>
+
+	<p class="paragraph">These functions are different from the other lifecycle hooks. Rather than a class method, they are standalone functions that accept a callback. The execution of render callbacks are not tied to any specific component instance, but instead an application-wide hook.</p>
+
+	<p class="paragraph">afterRender and afterNextRender must be called in an injection context, typically a component's constructor.</p>
+	
+	<h2>AfterNextRender</h2>
+	
+	<p class="paragraph">Runs once the next time that all components have been rendered to the DOM.</p>
+
+	<p class="paragraph">Typically, afterNextRender is used for one-time initialisation, such as for third-party libraries or APIs that only work on the browser side, for example charts, or for browser-only APIs.</p>
+
+	<p class="paragraph">A good example of using the browser’s built-in API is ResizeObserver and IntersectionObserver. With afterNextRender it is safe to initialise such APIs only in the browser, because an error will appear during server-side rendering if we don’t use afterNextRender and just use these APIs directly in the code.</p>
+	
+	<h2>AfterRender</h2>
+
+	<p class="paragraph">Runs every time all components have been rendered to the DOM.</p>
+
+	<p class="paragraph">Generally, if you need to manually read or write any layout data, such as size or location, you should use afterRender. The purpose of this function is to synchronise with the DOM and it is called after every change detection cycle that follows.</p>
+
+</div>

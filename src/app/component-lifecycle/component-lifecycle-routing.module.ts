@@ -11,6 +11,7 @@ import { ComponentLifecycleAfterContentCheckedComponent } from './component-life
 import { ComponentLifecycleAfterViewInitComponent } from './component-lifecycle-after-view-init/component-lifecycle-after-view-init.component';
 import { ComponentLifecycleAfterViewCheckedComponent } from './component-lifecycle-after-view-checked/component-lifecycle-after-view-checked.component';
 import { ComponentLifecycleOnDestroyComponent } from './component-lifecycle-on-destroy/component-lifecycle-on-destroy.component';
+import { ComponentLifecycleRenderingComponent } from './component-lifecycle-rendering/component-lifecycle-rendering.component';
 
 const routes: Routes = [
 	{
@@ -57,6 +58,10 @@ const routes: Routes = [
 			{
 				path: 'on-destroy',
 				component: ComponentLifecycleOnDestroyComponent
+			},
+			{
+				path: 'rendering',
+				component: ComponentLifecycleRenderingComponent
 			}
 		]
 	}

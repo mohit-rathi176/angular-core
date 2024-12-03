@@ -13,6 +13,7 @@ import { ComponentLifecycleAfterContentCheckedComponent } from './component-life
 import { ComponentLifecycleAfterViewInitComponent } from './component-lifecycle-after-view-init/component-lifecycle-after-view-init.component';
 import { ComponentLifecycleAfterViewCheckedComponent } from './component-lifecycle-after-view-checked/component-lifecycle-after-view-checked.component';
 import { ComponentLifecycleOnDestroyComponent } from './component-lifecycle-on-destroy/component-lifecycle-on-destroy.component';
+import { ComponentLifecycleRenderingComponent } from './component-lifecycle-rendering/component-lifecycle-rendering.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ComponentLifecycleOnDestroyComponent } from './component-lifecycle-on-d
     ComponentLifecycleAfterContentCheckedComponent,
     ComponentLifecycleAfterViewInitComponent,
     ComponentLifecycleAfterViewCheckedComponent,
-    ComponentLifecycleOnDestroyComponent
+    ComponentLifecycleOnDestroyComponent,
+    ComponentLifecycleRenderingComponent
   ],
   imports: [
     CommonModule,
