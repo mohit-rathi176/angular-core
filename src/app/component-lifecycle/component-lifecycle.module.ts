@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ComponentLifecycleRoutingModule } from './component-lifecycle-routing.module';
 
+import { MatModule } from '../mat/mat.module';
+
 import { ComponentLifecycleComponent } from './component-lifecycle.component';
 import { ComponentLifecycleIntroductionComponent } from './component-lifecycle-introduction/component-lifecycle-introduction.component';
 import { ComponentLifecycleOnChangesComponent } from './component-lifecycle-on-changes/component-lifecycle-on-changes.component';
@@ -31,7 +33,8 @@ import { ComponentLifecycleRenderingComponent } from './component-lifecycle-rend
   ],
   imports: [
     CommonModule,
-    ComponentLifecycleRoutingModule
+    ComponentLifecycleRoutingModule,
+    MatModule
   ]
 })
 export class ComponentLifecycleModule { }

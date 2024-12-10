@@ -1,0 +1,115 @@
+<div class="content-container">
+
+	<h1>Custom Directives</h1>
+
+	<p class="paragraph">To create a directive, use the CLI command ng generate directive. Example:<br> $ ng generate directive highlight</p>
+
+	<p class="paragraph">A directive is a class decorated with &#64;Directive decorator which is imported from &#64;angular/core. It can define metadata for the directive class like selector, providers, standalone, etc.</p>
+
+    <pre>
+    import &#123; Directive &#125; from '&#64;angular/core';
+
+    &#64;Directive(&#123;
+        selector: '[appHighlight]',
+    &#125;)
+    export class HighlightDirective &#123; &#125;
+    </pre>
+
+    <p class="paragraph">Import ElementRef from &#64;angular/core. ElementRef grants direct access to the host DOM element through its nativeElement property. Add ElementRef in the directive's constructor() to inject a reference to the host DOM element, the element to which you apply the directive.</p>
+
+    <pre>
+    import &#123; Directive, ElementRef &#125; from '&#64;angular/core';
+
+    &#64;Directive(&#123;
+        selector: '[appHighlight]',
+    &#125;)
+    export class HighlightDirective &#123;
+        
+        constructor(private el: ElementRef) &#123;
+            this.el.nativeElement.style.backgroundColor = 'yellow';
+        &#125;
+        
+    &#125;
+    </pre>
+
+    <p class="paragraph">In Angular, Renderer2 is a service provided by Angular that allows you to safely manipulate the DOM in a platform-independent way. By using Renderer2, you avoid directly accessing the browser's DOM API, which can lead to issues in different environments (e.g., server-side rendering with Angular Universal).</p>
+
+    <pre>
+    import &#123; Directive, ElementRef, Renderer2 &#125; from '&#64;angular/core';
+
+    &#64;Directive(&#123;
+        selector: '[appHighlight]',
+    &#125;)
+    export class HighlightDirective &#123;
+        
+        constructor(private el: ElementRef, private renderer: Renderer2) &#123;
+            this.renderer.setStyle(this.el.nativeElement, 'background-color', 'yellow');
+        &#125;
+        
+    &#125;
+    </pre>
+
+    <p class="paragraph">
+        Using &#64;HostBinding and &#64;HostListener:
+        <li>&#64;HostBinding: Binds a property of the host element to a directive's property.</li>
+        <li>&#64;HostListener: Listens for DOM events on the host element and triggers methods in the directive.</li>
+    </p>
+
+    <pre>
+    import &#123; Directive, HostBinding, HostListener &#125; from '&#64;angular/core';
+    
+    &#64;Directive(&#123;
+        selector: '[appHoverEffect]'
+    &#125;)
+    export class HoverEffectDirective &#123;
+    
+        &#64;HostBinding('style.backgroundColor') backgroundColor: string;
+        &#64;HostBinding('style.transform') transform: string;
+    
+        constructor() &#123;
+            this.backgroundColor = 'transparent';
+            this.transform = 'scale(1)';
+        &#125;
+    
+        &#64;HostListener('mouseenter') onMouseEnter() &#123;
+            this.backgroundColor = 'lightblue';
+            this.transform = 'scale(1.1)';
+        &#125;
+    
+        &#64;HostListener('mouseleave') onMouseLeave() &#123;
+            this.backgroundColor = 'transparent';
+            this.transform = 'scale(1)';
+        &#125;
+    &#125;
+    </pre>
+
+    <p class="paragraph">
+        In Angular, TemplateRef and ViewContainerRef are two important services that are commonly used when building custom structural directives. They are used to work with templates and manipulate the DOM dynamically.
+        <li>TemplateRef: It allows you to access the content of an HTML element in a directive, without rendering it immediately. Think of it as a blueprint.</li>
+        <li>ViewContainerRef: It is a reference to a container where views can be attached or removed. It provides methods for manipulating the DOM, such as adding or removing embedded views or components dynamically. Think of it as the construction site.</li>
+    </p>
+
+    <pre>
+    import &#123; Directive, Input, TemplateRef, ViewContainerRef &#125; from '&#64;angular/core';
+
+    &#64;Directive(&#123;
+        selector: '[appCustomTemplate]'
+    &#125;)
+    export class CustomTemplateDirective &#123;
+    
+        &#64;Input() set appCustomTemplate(condition: boolean) &#123;
+            if (condition) &#123;
+                this.viewContainer.createEmbeddedView(this.templateRef);
+            &#125; else &#123;
+                this.viewContainer.clear();
+            &#125;
+        &#125;
+    
+        constructor(
+            private templateRef: TemplateRef&lt;any&gt;,
+            private viewContainer: ViewContainerRef
+        ) &#123; &#125;
+    &#125;
+    </pre>
+
+</div>

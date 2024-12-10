@@ -1,0 +1,24 @@
+<div class="content-container">
+
+	<h1>Directives</h1>
+
+	<p class="paragraph">Directives are classes that add additional behavior to elements in your Angular applications.</p>
+
+	<table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="directiveType">
+            <th mat-header-cell *matHeaderCellDef>Directive Types</th>
+            <td mat-cell *matCellDef="let element">{{ element.directiveType }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="directiveDetail">
+            <th mat-header-cell *matHeaderCellDef>Details</th>
+            <td mat-cell *matCellDef="let element">{{ element.directiveDetail }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    </table>
+
+</div>

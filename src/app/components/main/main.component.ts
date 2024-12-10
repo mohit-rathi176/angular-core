@@ -60,8 +60,24 @@ export class MainComponent implements OnInit {
 		},
 		{
 			title: 'Directives',
-			link: '/directives',
-			isRoot: true
+			children: [
+				{
+					title: 'Introduction',
+					link: '/directives/introduction'
+				},
+				{
+					title: 'Attribute Directives',
+					link: '/directives/attribute-directives'
+				},
+				{
+					title: 'Structural Directives',
+					link: '/directives/structural-directives'
+				},
+				{
+					title: 'Custom Directives',
+					link: '/directives/custom-directives'
+				}
+			]
 		},
 		{
 			title: 'Pipes',

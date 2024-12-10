@@ -10,6 +10,10 @@ const routes: Routes = [
 	{
 		path: 'component-lifecycle',
 		loadChildren: () => import('./component-lifecycle/component-lifecycle.module').then(m => m.ComponentLifecycleModule)
+	},
+	{
+		path: 'directives',
+		loadChildren: () => import('./directives/directives.module').then(m => m.DirectivesModule)
 	}
 ];
 
