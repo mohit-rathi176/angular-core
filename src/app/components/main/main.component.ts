@@ -81,8 +81,12 @@ export class MainComponent implements OnInit {
 		},
 		{
 			title: 'Pipes',
-			link: '/pipes',
-			isRoot: true
+			children: [
+				{
+					title: 'Introduction',
+					link: '/pipes/introduction'
+				}
+			]
 		}
 	];
 
