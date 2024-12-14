@@ -1,0 +1,44 @@
+<div class="content-container">
+
+	<h1>Custom Pipes</h1>
+
+	<p class="paragraph">To create a pipe, use the CLI command ng generate pipe. Example:<br> $ ng generate pipe reverse</p>
+
+	<p class="paragraph">
+		You can define a custom pipe by implementing a TypeScript class with the &#64;Pipe decorator. A pipe must have two things:
+		<li>A name, specified in the pipe decorator</li>
+		<li>A method named transform that performs the value transformation</li>
+	</p>
+
+	<p class="paragraph">The TypeScript class should additionally implement the PipeTransform interface to ensure that it satisfies the type signature for a pipe.</p>
+
+	<p class="paragraph">When creating a custom pipe, import Pipe from the &#64;angular/core package and use it as a decorator for the TypeScript class. The &#64;Pipe decorator requires a name that controls how the pipe is used in a template.</p>
+
+	<p class="paragraph">
+		The naming convention for custom pipes consists of two conventions:
+		<li>name - camelCase is recommended. Do not use hyphens.</li>
+		<li>class name - PascalCase version of the name with Pipe appended to the end</li>
+	</p>
+
+	<p class="paragraph">In addition to the &#64;Pipe decorator, custom pipes should always implement the PipeTransform interface from &#64;angular/core. Implementing this interface ensures that your pipe class has the correct structure.</p>
+
+	<p class="paragraph">Every transformation is invoked by the transform method with the first parameter being the value being passed in and the return value being the transformed value.</p>
+
+	<p class="paragraph">You can add parameters to your transformation by adding additional parameters to the transform method.</p>
+
+	<pre>
+	import &lbrace; Pipe, PipeTransform &rbrace; from '&#64;angular/core';
+
+	&#64;Pipe(&lbrace;
+		name: 'kebabCase',
+	&rbrace;)
+	export class KebabCasePipe implements PipeTransform &lbrace;
+
+		transform(value: string): string &lbrace;
+			return value.toLowerCase().replace(/ /g, '-');
+		&rbrace;
+
+	&rbrace;
+	</pre>
+
+</div>

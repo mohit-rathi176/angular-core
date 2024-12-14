@@ -1,0 +1,30 @@
+<div class="content-container">
+
+	<h1>Pure and Impure Pipes</h1>
+
+	<p class="paragraph">
+		Pure Pipes:
+		<li>Re-compute the output only when the input changes.</li>
+		<li>They are optimized for performance.</li>
+	</p>
+
+	<p class="paragraph">
+		Impure Pipes:
+		<li>Re-compute the output for every change detection cycle.</li>
+		<li>Useful when dealing with data that changes frequently, like arrays or objects.</li>
+	</p>
+
+	<p class="paragraph">To create an impure pipe, set pure: false in the &#64;Pipe decorator.</p>
+
+	<pre>
+	&#64;Pipe(&lbrace;
+		name: 'kebabCase',
+		pure: false
+	&rbrace;)
+	</pre>
+
+	<p class="paragraph">By default, pipes are pure.</p>
+
+	<p class="paragraph">Avoid creating impure pipes unless absolutely necessary, as they can incur a significant performance penalty if used without care.</p>
+
+</div>

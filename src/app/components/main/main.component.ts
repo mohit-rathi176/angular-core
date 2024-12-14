@@ -85,6 +85,14 @@ export class MainComponent implements OnInit {
 				{
 					title: 'Introduction',
 					link: '/pipes/introduction'
+				},
+				{
+					title: 'Custom Pipes',
+					link: '/pipes/custom-pipes'
+				},
+				{
+					title: 'Pure and Impure Pipes',
+					link: '/pipes/pure-and-impure-pipes'
 				}
 			]
 		}

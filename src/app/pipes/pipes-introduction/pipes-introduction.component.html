@@ -2,6 +2,51 @@
 
 	<h1>Pipes</h1>
 
-	<p class="paragraph"></p>
+	<p class="paragraph">Pipes are a way to transform data within templates. They are typically used to format data in a way that is more user-friendly without altering the actual data in the component. Pipes can be thought of as functions that take input data and return transformed output.</p>
+
+	<p class="paragraph">Pipes let you declare a transformation function once and then use that transformation across multiple templates.</p>
+
+	<p class="paragraph">Pipe operator uses the vertical bar character (|), within a template expression.</p>
+
+	<pre ngNonBindable>
+	&lt;p&gt;Total: {{ amount | currency }}&lt;/p&gt;
+	</pre>
+
+	<p class="paragraph">Angular includes a set of built-in pipes in the &#64;angular/common package:</p>
+
+	<table mat-table [dataSource]="dataSource">
+
+		<ng-container matColumnDef="pipeName">
+			<th mat-header-cell *matHeaderCellDef>Name</th>
+			<td mat-cell *matCellDef="let element">{{ element.pipeName }}</td>
+		</ng-container>
+
+		<ng-container matColumnDef="pipeDescription">
+			<th mat-header-cell *matHeaderCellDef>Description</th>
+			<td mat-cell *matCellDef="let element">{{ element.pipeDescription }}</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+  </table>
+
+	<p class="paragraph">You can apply multiple transformations to a value by using multiple pipe operators. Angular runs the pipes from left to right.</p>
+
+	<pre ngNonBindable>
+	&lt;p&gt;The event will occur on {{ scheduledOn | date | uppercase }}.&lt;/p&gt;
+	</pre>
+
+	<p class="paragraph">Some pipes accept parameters to configure the transformation. To specify a parameter, append the pipe name with a colon (:) followed by the parameter value.</p>
+
+	<pre ngNonBindable>
+	&lt;p&gt;The event will occur at {{ scheduledOn | date:'hh:mm' }}.&lt;/p&gt;
+	</pre>
+
+	<p class="paragraph">Some pipes may accept multiple parameters. You can specify additional parameter values separated by the colon character (:).</p>
+
+	<pre ngNonBindable>
+	&lt;p&gt;The event will occur at {{ scheduledOn | date:'hh:mm':'UTC' }}.&lt;/p&gt;
+	</pre>
 
 </div>
